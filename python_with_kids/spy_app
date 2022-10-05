@@ -1,0 +1,48 @@
+#This project is led by my talented 8 year old. He wants a spy app for himself and his recruits. We add to this code whenever we are in the mood
+
+#Grey and Tamra's Super Secret Spy App
+#Mission: allow agents to check messages and choose new missions
+
+def agent_name():
+    name = input("Agent, What is your name? ").strip().title()
+    print("Welcome Agent", name)
+    match name:
+        case "Greyson" | "Berlin" | "Tamra" | "Corey":
+            print("You have been assigned to the Griffindor agent group, you have pen
+        case "Lily" | "Dominic" | "Spencer" | "Lauren":
+            print("You have been assigned to the Ravenclaw agent goup, you have pendi
+        case _:
+            print("You will be assigned an agent group after completing orientation")
+
+def agent_code():
+    new_mess = 3
+    new_miss = 1 
+    while True:
+        try:
+            agent = int(input("Enter your agent code: "))
+            if agent == 17 or agent == 12:
+                print("You are authorized")
+                print(f"You have {new_mess} messages and {new_miss} new mission")
+                break
+            else:
+                print("Agent, you are not authorized, try again")
+                return agent_code()
+        except ValueError:
+                print("Please your agent code as a number")
+                return agent_code()
+        else: 
+            break
+
+#We want to ask a user their agent name and authorize them with their agent code
+agent_name()
+agent_code()
+
+
+  
+   
+    
+    
+    
+    
+
+
